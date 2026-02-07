@@ -1,8 +1,19 @@
-import menClothingImg from '@/assets/men-clothing.jpg';
-import menBootsImg from '@/assets/men-boots.jpg';
-import womenClothingImg from '@/assets/women-clothing.jpg';
-import womenBootsImg from '@/assets/women-boots.jpg';
-import accessoriesImg from '@/assets/accessories.jpg';
+import menClothingImg1 from '@/assets/men-clothing.jpg';
+import menClothingImg2 from '@/assets/men-clothing-2.jpg';
+import menClothingImg3 from '@/assets/men-clothing-3.jpg';
+import menClothingImg4 from '@/assets/men-clothing-4.jpg';
+import menBootsImg1 from '@/assets/men-boots.jpg';
+import menBootsImg2 from '@/assets/men-boots-2.jpg';
+import menAccessoriesImg1 from '@/assets/accessories.jpg';
+import menAccessoriesImg2 from '@/assets/men-accessories-2.jpg';
+import womenClothingImg1 from '@/assets/women-clothing.jpg';
+import womenClothingImg2 from '@/assets/women-clothing-2.jpg';
+import womenClothingImg3 from '@/assets/women-clothing-3.jpg';
+import womenClothingImg4 from '@/assets/women-clothing-4.jpg';
+import womenBootsImg1 from '@/assets/women-boots.jpg';
+import womenBootsImg2 from '@/assets/women-boots-2.jpg';
+import womenAccessoriesImg1 from '@/assets/accessories.jpg';
+import womenAccessoriesImg2 from '@/assets/women-accessories-2.jpg';
 
 export interface Product {
   id: string;
@@ -13,16 +24,16 @@ export interface Product {
   image: string;
 }
 
-const imageMap = {
+const imageArrays = {
   men: {
-    clothing: menClothingImg,
-    boots: menBootsImg,
-    accessories: accessoriesImg,
+    clothing: [menClothingImg1, menClothingImg2, menClothingImg3, menClothingImg4],
+    boots: [menBootsImg1, menBootsImg2],
+    accessories: [menAccessoriesImg1, menAccessoriesImg2],
   },
   women: {
-    clothing: womenClothingImg,
-    boots: womenBootsImg,
-    accessories: accessoriesImg,
+    clothing: [womenClothingImg1, womenClothingImg2, womenClothingImg3, womenClothingImg4],
+    boots: [womenBootsImg1, womenBootsImg2],
+    accessories: [womenAccessoriesImg1, womenAccessoriesImg2],
   },
 };
 
@@ -33,13 +44,14 @@ function createProduct(
   gender: 'men' | 'women',
   index: number
 ): Product {
+  const images = imageArrays[gender][category];
   return {
     id: `${gender}-${category}-${index}`,
     name,
     price,
     category,
     gender,
-    image: imageMap[gender][category],
+    image: images[index % images.length],
   };
 }
 
