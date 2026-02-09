@@ -2,7 +2,15 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { Checkbox } from '@/components/ui/checkbox';
+import { Label } from '@/components/ui/label';
 import { toast } from 'sonner';
+
+const services = [
+  { id: 'personal-styling', label: 'Personal Styling' },
+  { id: 'hair-styling', label: 'Hair Styling' },
+  { id: 'makeup', label: 'Makeup' },
+] as const;
 
 const BookingForm = () => {
   const [formData, setFormData] = useState({
@@ -11,11 +19,25 @@ const BookingForm = () => {
     style: '',
     date: '',
   });
+  const [selectedServices, setSelectedServices] = useState<string[]>([]);
+
+  const toggleService = (serviceId: string) => {
+    setSelectedServices(prev =>
+      prev.includes(serviceId)
+        ? prev.filter(s => s !== serviceId)
+        : [...prev, serviceId]
+    );
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (selectedServices.length === 0) {
+      toast.error('Please select at least one service.');
+      return;
+    }
     toast.success('Appointment request submitted! We will contact you shortly.');
     setFormData({ name: '', email: '', style: '', date: '' });
+    setSelectedServices([]);
   };
 
   return (
@@ -53,6 +75,28 @@ const BookingForm = () => {
             maxLength={255}
           />
         </div>
+
+        <div>
+          <label className="text-sm tracking-wider uppercase text-muted-foreground mb-3 block">Services</label>
+          <div className="space-y-3">
+            {services.map(service => (
+              <div key={service.id} className="flex items-center gap-3">
+                <Checkbox
+                  id={service.id}
+                  checked={selectedServices.includes(service.id)}
+                  onCheckedChange={() => toggleService(service.id)}
+                />
+                <Label
+                  htmlFor={service.id}
+                  className="text-sm tracking-wide cursor-pointer"
+                >
+                  {service.label}
+                </Label>
+              </div>
+            ))}
+          </div>
+        </div>
+
         <div>
           <label className="text-sm tracking-wider uppercase text-muted-foreground mb-2 block">Preferred Style</label>
           <Input
