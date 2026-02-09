@@ -136,7 +136,7 @@ const menAccessoriesData: [string, number][] = [
   ['Italian Leather Belt', 450],
   ['Wool Fedora Hat', 480],
   ['Leather Weekend Bag', 1800],
-  ['Tortoiseshell Sunglasses', 620],
+  ['Silk Bow Tie', 620],
 ];
 
 // Women's Collection — 15 clothing, 10 boots, 5 accessories = 30 products
@@ -176,7 +176,7 @@ const womenAccessoriesData: [string, number][] = [
   ['Silk Print Scarf', 580],
   ['Structured Black Handbag', 2100],
   ['Crystal Evening Clutch', 1950],
-  ['Cat-Eye Sunglasses', 520],
+  ['Pearl Strand Necklace', 520],
 ];
 
 function createProduct(
