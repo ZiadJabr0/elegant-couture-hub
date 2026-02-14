@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import ProductCard from './ProductCard';
+import ProductDetailModal from './ProductDetailModal';
 import type { Product } from '@/data/products';
 
 interface ProductGalleryProps {
@@ -10,6 +11,7 @@ const categories = ['all', 'clothing', 'boots', 'accessories'] as const;
 
 const ProductGallery = ({ products }: ProductGalleryProps) => {
   const [activeCategory, setActiveCategory] = useState<string>('all');
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
   const filtered = activeCategory === 'all'
     ? products
@@ -35,9 +37,19 @@ const ProductGallery = ({ products }: ProductGalleryProps) => {
 
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {filtered.map((product, i) => (
-          <ProductCard key={product.id} product={product} index={i} />
+          <ProductCard
+            key={product.id}
+            product={product}
+            index={i}
+            onSelect={setSelectedProduct}
+          />
         ))}
       </div>
+
+      <ProductDetailModal
+        product={selectedProduct}
+        onClose={() => setSelectedProduct(null)}
+      />
     </div>
   );
 };
