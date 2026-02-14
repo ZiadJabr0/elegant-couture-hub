@@ -7,6 +7,7 @@ import { CartProvider } from "@/contexts/CartContext";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import CartSidebar from "@/components/cart/CartSidebar";
+import Preloader from "@/components/Preloader";
 import Index from "./pages/Index";
 import Men from "./pages/Men";
 import Women from "./pages/Women";
@@ -21,6 +22,7 @@ const App = () => (
       <CartProvider>
         <Toaster />
         <Sonner />
+        <Preloader />
         <BrowserRouter>
           <Header />
           <CartSidebar />

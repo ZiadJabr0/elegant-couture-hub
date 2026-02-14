@@ -13,6 +13,11 @@ import menClothingImg12 from '@/assets/men-clothing-12.jpg';
 import menClothingImg13 from '@/assets/men-clothing-13.jpg';
 import menClothingImg14 from '@/assets/men-clothing-14.jpg';
 import menClothingImg15 from '@/assets/men-clothing-15.jpg';
+import menClothingImg16 from '@/assets/men-clothing-16.jpg';
+import menClothingImg17 from '@/assets/men-clothing-17.jpg';
+import menClothingImg18 from '@/assets/men-clothing-18.jpg';
+import menClothingImg19 from '@/assets/men-clothing-19.jpg';
+import menClothingImg20 from '@/assets/men-clothing-20.jpg';
 import menBootsImg1 from '@/assets/men-boots.jpg';
 import menBootsImg2 from '@/assets/men-boots-2.jpg';
 import menBootsImg3 from '@/assets/men-boots-3.jpg';
@@ -23,11 +28,16 @@ import menBootsImg7 from '@/assets/men-boots-7.jpg';
 import menBootsImg8 from '@/assets/men-boots-8.jpg';
 import menBootsImg9 from '@/assets/men-boots-9.jpg';
 import menBootsImg10 from '@/assets/men-boots-10.jpg';
+import menBootsImg11 from '@/assets/men-boots-11.jpg';
+import menBootsImg12 from '@/assets/men-boots-12.jpg';
+import menBootsImg13 from '@/assets/men-boots-13.jpg';
 import menAccessoriesImg1 from '@/assets/accessories.jpg';
 import menAccessoriesImg2 from '@/assets/men-accessories-2.jpg';
 import menAccessoriesImg3 from '@/assets/men-accessories-3.jpg';
 import menAccessoriesImg4 from '@/assets/men-accessories-4.jpg';
 import menAccessoriesImg5 from '@/assets/men-accessories-5.jpg';
+import menAccessoriesImg6 from '@/assets/men-accessories-6.jpg';
+import menAccessoriesImg7 from '@/assets/men-accessories-7.jpg';
 import womenClothingImg1 from '@/assets/women-clothing.jpg';
 import womenClothingImg2 from '@/assets/women-clothing-2.jpg';
 import womenClothingImg3 from '@/assets/women-clothing-3.jpg';
@@ -43,6 +53,11 @@ import womenClothingImg12 from '@/assets/women-clothing-12.jpg';
 import womenClothingImg13 from '@/assets/women-clothing-13.jpg';
 import womenClothingImg14 from '@/assets/women-clothing-14.jpg';
 import womenClothingImg15 from '@/assets/women-clothing-15.jpg';
+import womenClothingImg16 from '@/assets/women-clothing-16.jpg';
+import womenClothingImg17 from '@/assets/women-clothing-17.jpg';
+import womenClothingImg18 from '@/assets/women-clothing-18.jpg';
+import womenClothingImg19 from '@/assets/women-clothing-19.jpg';
+import womenClothingImg20 from '@/assets/women-clothing-20.jpg';
 import womenBootsImg1 from '@/assets/women-boots.jpg';
 import womenBootsImg2 from '@/assets/women-boots-2.jpg';
 import womenBootsImg3 from '@/assets/women-boots-3.jpg';
@@ -53,11 +68,16 @@ import womenBootsImg7 from '@/assets/women-boots-7.jpg';
 import womenBootsImg8 from '@/assets/women-boots-8.jpg';
 import womenBootsImg9 from '@/assets/women-boots-9.jpg';
 import womenBootsImg10 from '@/assets/women-boots-10.jpg';
+import womenBootsImg11 from '@/assets/women-boots-11.jpg';
+import womenBootsImg12 from '@/assets/women-boots-12.jpg';
+import womenBootsImg13 from '@/assets/women-boots-13.jpg';
 import womenAccessoriesImg1 from '@/assets/accessories.jpg';
 import womenAccessoriesImg2 from '@/assets/women-accessories-2.jpg';
 import womenAccessoriesImg3 from '@/assets/women-accessories-3.jpg';
 import womenAccessoriesImg4 from '@/assets/women-accessories-4.jpg';
 import womenAccessoriesImg5 from '@/assets/women-accessories-5.jpg';
+import womenAccessoriesImg6 from '@/assets/women-accessories-6.jpg';
+import womenAccessoriesImg7 from '@/assets/women-accessories-7.jpg';
 
 export interface Product {
   id: string;
@@ -68,38 +88,43 @@ export interface Product {
   image: string;
 }
 
-// Each product gets its own unique image — 1:1 mapping
 const menClothingImages = [
   menClothingImg1, menClothingImg2, menClothingImg3, menClothingImg4, menClothingImg5,
   menClothingImg6, menClothingImg7, menClothingImg8, menClothingImg9, menClothingImg10,
   menClothingImg11, menClothingImg12, menClothingImg13, menClothingImg14, menClothingImg15,
+  menClothingImg16, menClothingImg17, menClothingImg18, menClothingImg19, menClothingImg20,
 ];
 
 const menBootsImages = [
   menBootsImg1, menBootsImg2, menBootsImg3, menBootsImg4, menBootsImg5,
   menBootsImg6, menBootsImg7, menBootsImg8, menBootsImg9, menBootsImg10,
+  menBootsImg11, menBootsImg12, menBootsImg13,
 ];
 
 const menAccessoriesImages = [
   menAccessoriesImg1, menAccessoriesImg2, menAccessoriesImg3, menAccessoriesImg4, menAccessoriesImg5,
+  menAccessoriesImg6, menAccessoriesImg7,
 ];
 
 const womenClothingImages = [
   womenClothingImg1, womenClothingImg2, womenClothingImg3, womenClothingImg4, womenClothingImg5,
   womenClothingImg6, womenClothingImg7, womenClothingImg8, womenClothingImg9, womenClothingImg10,
   womenClothingImg11, womenClothingImg12, womenClothingImg13, womenClothingImg14, womenClothingImg15,
+  womenClothingImg16, womenClothingImg17, womenClothingImg18, womenClothingImg19, womenClothingImg20,
 ];
 
 const womenBootsImages = [
   womenBootsImg1, womenBootsImg2, womenBootsImg3, womenBootsImg4, womenBootsImg5,
   womenBootsImg6, womenBootsImg7, womenBootsImg8, womenBootsImg9, womenBootsImg10,
+  womenBootsImg11, womenBootsImg12, womenBootsImg13,
 ];
 
 const womenAccessoriesImages = [
   womenAccessoriesImg1, womenAccessoriesImg2, womenAccessoriesImg3, womenAccessoriesImg4, womenAccessoriesImg5,
+  womenAccessoriesImg6, womenAccessoriesImg7,
 ];
 
-// Men's Collection — 15 clothing, 10 boots, 5 accessories = 30 products
+// Men's Collection — 20 clothing, 13 boots, 7 accessories = 40 products
 const menClothingData: [string, number][] = [
   ['Midnight Tailored Blazer', 2450],
   ['Cashmere Crew Neck Sweater', 890],
@@ -116,6 +141,11 @@ const menClothingData: [string, number][] = [
   ['Cable Knit Sweater', 760],
   ['Italian Cotton Dress Shirt', 580],
   ['Pinstripe Wool Suit', 4200],
+  ['Navy Wool Peacoat', 2850],
+  ['Suede Bomber Jacket', 2200],
+  ['Cashmere V-Neck Cardigan', 920],
+  ['Olive Tailored Trousers', 680],
+  ['Linen Pleated Dress Pants', 750],
 ];
 
 const menBootsData: [string, number][] = [
@@ -129,6 +159,9 @@ const menBootsData: [string, number][] = [
   ['Combat Sole Derby', 1100],
   ['Burnished Cap-Toe Boots', 1680],
   ['Patent Leather Dress Shoes', 1750],
+  ['Cognac Wingtip Boots', 1620],
+  ['Navy Suede Chukka Boots', 1050],
+  ['Black Polished Dress Boots', 1480],
 ];
 
 const menAccessoriesData: [string, number][] = [
@@ -137,9 +170,11 @@ const menAccessoriesData: [string, number][] = [
   ['Wool Fedora Hat', 480],
   ['Leather Weekend Bag', 1800],
   ['Silk Bow Tie', 620],
+  ['Leather Messenger Bag', 1650],
+  ['Cashmere Scarf', 380],
 ];
 
-// Women's Collection — 15 clothing, 10 boots, 5 accessories = 30 products
+// Women's Collection — 20 clothing, 13 boots, 7 accessories = 40 products
 const womenClothingData: [string, number][] = [
   ['Silk Draped Evening Gown', 4500],
   ['Tailored Wool Blazer', 2200],
@@ -156,6 +191,11 @@ const womenClothingData: [string, number][] = [
   ['Velvet Wrap Skirt', 980],
   ['Silk Charmeuse Blouse', 850],
   ['Sequin Evening Top', 1100],
+  ['Emerald Silk Wrap Blouse', 1450],
+  ['Camel Tailored Wool Coat', 3400],
+  ['Champagne Satin Midi Dress', 2650],
+  ['Ivory Cashmere Turtleneck', 980],
+  ['Black Blazer Dress', 2100],
 ];
 
 const womenBootsData: [string, number][] = [
@@ -169,6 +209,9 @@ const womenBootsData: [string, number][] = [
   ['Crystal-Heel Ankle Boots', 2800],
   ['Classic Leather Pumps', 980],
   ['Velvet Platform Boots', 1650],
+  ['Burgundy Stiletto Boots', 1780],
+  ['Over-the-Knee Suede Boots', 2450],
+  ['Pearl Platform Shoes', 1150],
 ];
 
 const womenAccessoriesData: [string, number][] = [
@@ -177,6 +220,8 @@ const womenAccessoriesData: [string, number][] = [
   ['Structured Black Handbag', 2100],
   ['Crystal Evening Clutch', 1950],
   ['Pearl Strand Necklace', 520],
+  ['Cognac Leather Tote', 1850],
+  ['Floral Silk Scarf', 650],
 ];
 
 function createProduct(
