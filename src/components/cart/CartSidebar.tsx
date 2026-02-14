@@ -8,7 +8,7 @@ const CartSidebar = () => {
   const { items, isOpen, setIsOpen, removeFromCart, updateQuantity, totalPrice, clearCart } = useCart();
 
   const handleCheckout = () => {
-    toast.success('Thank you for your order! Our team will contact you to finalize.');
+    toast.success('Quote request submitted! Our team will contact you to discuss your selections.');
     clearCart();
     setIsOpen(false);
   };
@@ -32,7 +32,7 @@ const CartSidebar = () => {
             className="fixed right-0 top-0 bottom-0 w-full max-w-md bg-background z-50 shadow-2xl flex flex-col"
           >
             <div className="flex items-center justify-between p-6 border-b border-border">
-              <h2 className="font-serif text-xl">Shopping Bag</h2>
+              <h2 className="font-serif text-xl">Quote Bag</h2>
               <button
                 onClick={() => setIsOpen(false)}
                 className="text-muted-foreground hover:text-foreground transition-colors"
@@ -99,7 +99,7 @@ const CartSidebar = () => {
                     <span className="font-serif text-lg">${totalPrice.toLocaleString()}</span>
                   </div>
                   <Button onClick={handleCheckout} className="w-full" size="lg">
-                    Proceed to Checkout
+                    Submit Quote Request
                   </Button>
                 </div>
               </>
