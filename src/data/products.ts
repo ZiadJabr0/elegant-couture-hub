@@ -58,6 +58,11 @@ import womenClothingImg17 from '@/assets/women-clothing-17.jpg';
 import womenClothingImg18 from '@/assets/women-clothing-18.jpg';
 import womenClothingImg19 from '@/assets/women-clothing-19.jpg';
 import womenClothingImg20 from '@/assets/women-clothing-20.jpg';
+import womenClothingImg21 from '@/assets/women-clothing-21.jpg';
+import womenClothingImg22 from '@/assets/women-clothing-22.jpg';
+import womenClothingImg23 from '@/assets/women-clothing-23.jpg';
+import womenClothingImg24 from '@/assets/women-clothing-24.jpg';
+import womenClothingImg25 from '@/assets/women-clothing-25.jpg';
 import womenBootsImg1 from '@/assets/women-boots.jpg';
 import womenBootsImg2 from '@/assets/women-boots-2.jpg';
 import womenBootsImg3 from '@/assets/women-boots-3.jpg';
@@ -111,6 +116,7 @@ const womenClothingImages = [
   womenClothingImg6, womenClothingImg7, womenClothingImg8, womenClothingImg9, womenClothingImg10,
   womenClothingImg11, womenClothingImg12, womenClothingImg13, womenClothingImg14, womenClothingImg15,
   womenClothingImg16, womenClothingImg17, womenClothingImg18, womenClothingImg19, womenClothingImg20,
+  womenClothingImg21, womenClothingImg22, womenClothingImg23, womenClothingImg24, womenClothingImg25,
 ];
 
 const womenBootsImages = [
@@ -196,6 +202,11 @@ const womenClothingData: [string, number][] = [
   ['Champagne Satin Midi Dress', 2650],
   ['Ivory Cashmere Turtleneck', 980],
   ['Black Blazer Dress', 2100],
+  ['Ruby Red Silk Evening Dress', 4800],
+  ['Navy Fitted Cocktail Dress', 3100],
+  ['Ivory Lace Midi Dress', 2750],
+  ['Black Velvet Evening Gown', 5500],
+  ['Dusty Rose Chiffon Maxi Dress', 3600],
 ];
 
 const womenBootsData: [string, number][] = [
