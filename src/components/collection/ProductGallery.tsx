@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 import ProductCard from './ProductCard';
 import ProductDetailModal from './ProductDetailModal';
 import type { Product } from '@/data/products';
@@ -7,44 +8,58 @@ interface ProductGalleryProps {
   products: Product[];
 }
 
-const categories = ['all', 'clothing', 'boots', 'accessories'] as const;
+const categoryLabels: Record<string, { title: string; subtitle: string }> = {
+  clothing: { title: 'Clothing', subtitle: 'Tailored & Ready-to-Wear' },
+  boots: { title: 'Footwear', subtitle: 'Shoes & Boots' },
+  accessories: { title: 'Accessories', subtitle: 'Bags, Scarves & More' },
+};
 
 const ProductGallery = ({ products }: ProductGalleryProps) => {
-  const [activeCategory, setActiveCategory] = useState<string>('all');
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
-  const filtered = activeCategory === 'all'
-    ? products
-    : products.filter(p => p.category === activeCategory);
+  const clothing = products.filter(p => p.category === 'clothing');
+  const boots = products.filter(p => p.category === 'boots');
+  const accessories = products.filter(p => p.category === 'accessories');
+
+  const sections = [
+    { key: 'clothing', products: clothing },
+    { key: 'boots', products: boots },
+    { key: 'accessories', products: accessories },
+  ];
 
   return (
-    <div>
-      <div className="flex justify-center gap-6 mb-12 flex-wrap">
-        {categories.map(cat => (
-          <button
-            key={cat}
-            onClick={() => setActiveCategory(cat)}
-            className={`nav-link pb-2 border-b-2 ${
-              activeCategory === cat
-                ? 'border-primary text-foreground'
-                : 'border-transparent text-muted-foreground hover:text-foreground'
-            }`}
-          >
-            {cat}
-          </button>
-        ))}
-      </div>
+    <div className="space-y-24">
+      {sections.map(({ key, products: sectionProducts }) => {
+        const { title, subtitle } = categoryLabels[key];
+        return (
+          <section key={key}>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-center mb-12"
+            >
+              <p className="text-sm tracking-[0.3em] uppercase text-muted-foreground mb-2">
+                {subtitle}
+              </p>
+              <h3 className="font-serif text-3xl md:text-4xl">{title}</h3>
+              <div className="w-16 h-px bg-primary mx-auto mt-4" />
+            </motion.div>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {filtered.map((product, i) => (
-          <ProductCard
-            key={product.id}
-            product={product}
-            index={i}
-            onSelect={setSelectedProduct}
-          />
-        ))}
-      </div>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              {sectionProducts.map((product, i) => (
+                <ProductCard
+                  key={product.id}
+                  product={product}
+                  index={i}
+                  onSelect={setSelectedProduct}
+                />
+              ))}
+            </div>
+          </section>
+        );
+      })}
 
       <ProductDetailModal
         product={selectedProduct}

@@ -46,10 +46,6 @@ const CollectionPage = ({ title, subtitle, heroImage, products }: CollectionPage
       {/* Gallery */}
       <section className="py-20 px-6">
         <div className="container mx-auto">
-          <div className="text-center mb-16">
-            <p className="section-heading">Browse</p>
-            <h2 className="section-title">The Collection</h2>
-          </div>
           <ProductGallery products={products} />
         </div>
       </section>
