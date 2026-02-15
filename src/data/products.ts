@@ -18,6 +18,16 @@ import menClothingImg17 from '@/assets/men-clothing-17.jpg';
 import menClothingImg18 from '@/assets/men-clothing-18.jpg';
 import menClothingImg19 from '@/assets/men-clothing-19.jpg';
 import menClothingImg20 from '@/assets/men-clothing-20.jpg';
+import menClothingImg21 from '@/assets/men-clothing-21.jpg';
+import menClothingImg22 from '@/assets/men-clothing-22.jpg';
+import menClothingImg23 from '@/assets/men-clothing-23.jpg';
+import menClothingImg24 from '@/assets/men-clothing-24.jpg';
+import menClothingImg25 from '@/assets/men-clothing-25.jpg';
+import menClothingImg26 from '@/assets/men-clothing-26.jpg';
+import menClothingImg27 from '@/assets/men-clothing-27.jpg';
+import menClothingImg28 from '@/assets/men-clothing-28.jpg';
+import menClothingImg29 from '@/assets/men-clothing-29.jpg';
+import menClothingImg30 from '@/assets/men-clothing-30.jpg';
 import menBootsImg1 from '@/assets/men-boots.jpg';
 import menBootsImg2 from '@/assets/men-boots-2.jpg';
 import menBootsImg3 from '@/assets/men-boots-3.jpg';
@@ -103,6 +113,8 @@ const menClothingImages = [
   menClothingImg6, menClothingImg7, menClothingImg8, menClothingImg9, menClothingImg10,
   menClothingImg11, menClothingImg12, menClothingImg13, menClothingImg14, menClothingImg15,
   menClothingImg16, menClothingImg17, menClothingImg18, menClothingImg19, menClothingImg20,
+  menClothingImg21, menClothingImg22, menClothingImg23, menClothingImg24, menClothingImg25,
+  menClothingImg26, menClothingImg27, menClothingImg28, menClothingImg29, menClothingImg30,
 ];
 
 const menBootsImages = [
@@ -136,7 +148,7 @@ const womenAccessoriesImages = [
   womenAccessoriesImg6, womenAccessoriesImg7,
 ];
 
-// Men's Collection — 20 clothing, 13 boots, 7 accessories = 40 products
+// Men's Collection — 30 clothing, 13 boots, 7 accessories = 50 products
 const menClothingData: [string, number][] = [
   ['Midnight Tailored Blazer', 2450],
   ['Cashmere Crew Neck Sweater', 890],
@@ -158,6 +170,16 @@ const menClothingData: [string, number][] = [
   ['Cashmere V-Neck Cardigan', 920],
   ['Olive Tailored Trousers', 680],
   ['Linen Pleated Dress Pants', 750],
+  ['Burgundy Velvet Dinner Jacket', 2750],
+  ['Prince of Wales Check Suit', 3800],
+  ['Forest Green Merino Sweater', 820],
+  ['Black Leather Trench Coat', 4200],
+  ['Ivory Silk French Cuff Shirt', 950],
+  ['Tan Corduroy Blazer', 1680],
+  ['Midnight Shawl Collar Tuxedo', 4500],
+  ['Charcoal Wool Waistcoat', 780],
+  ['Camel Cashmere Polo', 690],
+  ['Black Formal Overcoat', 3600],
 ];
 
 const menBootsData: [string, number][] = [
