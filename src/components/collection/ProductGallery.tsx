@@ -28,7 +28,7 @@ const ProductGallery = ({ products }: ProductGalleryProps) => {
   ];
 
   return (
-    <div className="space-y-24">
+    <div className="space-y-16 sm:space-y-24">
       {sections.map(({ key, products: sectionProducts }) => {
         const { title, subtitle } = categoryLabels[key];
         return (
@@ -36,18 +36,24 @@ const ProductGallery = ({ products }: ProductGalleryProps) => {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: '-30px' }}
               transition={{ duration: 0.6 }}
-              className="text-center mb-12"
+              className="text-center mb-8 sm:mb-12"
             >
-              <p className="text-sm tracking-[0.3em] uppercase text-muted-foreground mb-2">
+              <p className="text-xs sm:text-sm tracking-[0.3em] uppercase text-muted-foreground mb-2">
                 {subtitle}
               </p>
-              <h3 className="font-serif text-3xl md:text-4xl">{title}</h3>
-              <div className="w-16 h-px bg-primary mx-auto mt-4" />
+              <h3 className="font-serif text-2xl sm:text-3xl md:text-4xl">{title}</h3>
+              <motion.div
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="w-12 sm:w-16 h-px bg-primary mx-auto mt-3 sm:mt-4 origin-center"
+              />
             </motion.div>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
               {sectionProducts.map((product, i) => (
                 <ProductCard
                   key={product.id}
